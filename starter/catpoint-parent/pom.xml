@@ -13,7 +13,7 @@
   <url>http://www.example.com</url>
   <modules>
     <module>Security</module>
-    <module>Imgae1</module>
+    <module>Image</module>
   </modules>
 
   <properties>

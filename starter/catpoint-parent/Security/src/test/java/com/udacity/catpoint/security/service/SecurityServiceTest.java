@@ -1,10 +1,10 @@
-package com.udacity.catpoint.Image;
+package com.udacity.catpoint.security.service;
+
 
 
 import com.udacity.catpoint.image.service.ImageService;
 import com.udacity.catpoint.security.application.StatusListener;
 import com.udacity.catpoint.security.data.*;
-import com.udacity.catpoint.security.service.SecurityService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
