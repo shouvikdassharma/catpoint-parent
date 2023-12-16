@@ -1,3 +1,44 @@
+C:\Program Files\Java\jdk-17\bin\java.exe" -Dmaven.multiModuleProjectDirectory=C:\Users\Shouvik.Sharma\Desktop\Re-Skill\UdaSecurity\cd0384-java-application-deployment-projectstarter\starter\catpoint-parent -Djansi.passthrough=true "-Dmaven.home=C:\Users\Shouvik.Sharma\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\plugins\maven\lib\maven3" "-Dclassworlds.conf=C:\Users\Shouvik.Sharma\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\plugins\maven\lib\maven3\bin\m2.conf" "-Dmaven.ext.class.path=C:\Users\Shouvik.Sharma\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\plugins\maven\lib\maven-event-listener.jar" "-javaagent:C:\Users\Shouvik.Sharma\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\lib\idea_rt.jar=51859:C:\Users\Shouvik.Sharma\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Users\Shouvik.Sharma\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.7.0.jar;C:\Users\Shouvik.Sharma\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\plugins\maven\lib\maven3\boot\plexus-classworlds.license" org.codehaus.classworlds.Launcher -Didea.version=2023.2.2 test
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for com.udacity.catpoint:Security:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: junit:junit:jar -> version 3.8.1 vs 4.13.2 @ line 43, column 21
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] catpoint-parent                                                    [pom]
+[INFO] Image                                                              [jar]
+[INFO] Security                                                           [jar]
+[INFO]
+[INFO] ----------------< com.udacity.catpoint:catpoint-parent >----------------
+[INFO] Building catpoint-parent 1.0-SNAPSHOT                              [1/3]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --------------------< com.udacity.catpoint:Image2 >---------------------
+[INFO] Building Image 1.0-SNAPSHOT                                        [2/3]
+[INFO]   from Image\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ Image2 ---
+[INFO] skip non existing resourceDirectory C:\Users\Shouvik.Sharma\Desktop\Re-Skill\UdaSecurity\cd0384-java-application-deployment-projectstarter\starter\catpoint-parent\Image\src\main\resources
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ Image2 ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ Image2 ---
+[INFO] skip non existing resourceDirectory C:\Users\Shouvik.Sharma\Desktop\Re-Skill\UdaSecurity\cd0384-java-application-deployment-projectstarter\starter\catpoint-parent\Image\src\test\resources
+[INFO]
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ Image2 ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- surefire:3.1.2:test (default-test) @ Image2 ---
+[INFO] No tests to run.
 [INFO]
 [INFO] -------------------< com.udacity.catpoint:Security >--------------------
 [INFO] Building Security 1.0-SNAPSHOT                                     [3/3]
@@ -17,7 +58,7 @@
 [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ Security ---
 [INFO] Nothing to compile - all classes are up to date
 [INFO]
-[INFO] --- surefire:3.2.3:test (default-test) @ Security ---
+[INFO] --- surefire:3.1.2:test (default-test) @ Security ---
 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
 [INFO]
 [INFO] -------------------------------------------------------
@@ -29,3 +70,70 @@
 [INFO]
 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for catpoint-parent 1.0-SNAPSHOT:
+[INFO]
+[INFO] catpoint-parent .................................... SUCCESS [  0.003 s]
+[INFO] Image .............................................. SUCCESS [  1.400 s]
+[INFO] Security ........................................... FAILURE [  1.791 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.290 s
+[INFO] Finished at: 2023-12-16T23:34:23+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.1.2:test (default-test) on project Security:
+[ERROR]
+[ERROR] Please refer to C:\Users\Shouvik.Sharma\Desktop\Re-Skill\UdaSecurity\cd0384-java-application-deployment-projectstarter\starter\catpoint-parent\Security\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] There was an error in the forked process
+[ERROR] org/junit/platform/engine/EngineDiscoveryListener
+[ERROR] org.apache.maven.surefire.booter.SurefireBooterForkException: There was an error in the forked process
+[ERROR] org/junit/platform/engine/EngineDiscoveryListener
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.fork(ForkStarter.java:628)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.run(ForkStarter.java:285)
+[ERROR] 	at org.apache.maven.plugin.surefire.booterclient.ForkStarter.run(ForkStarter.java:250)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1203)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:1055)
+[ERROR] 	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:871)
+[ERROR] 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:342)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:330)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:213)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:175)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:76)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:163)
+[ERROR] 	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+[ERROR] 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:160)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+[ERROR] 	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+[ERROR] 	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+[ERROR] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+[ERROR] 	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+[ERROR] 	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+[ERROR] 	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:910)
+[ERROR] 	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+[ERROR] 	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+[ERROR] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[ERROR] 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[ERROR] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[ERROR] 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+[ERROR] 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+[ERROR] 	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+[ERROR]
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :Security
+
+Process finished with exit code 1
